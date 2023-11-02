@@ -45,6 +45,3 @@ else:
 
 print(f"Dealer - {dealer_score}")
 print(f"Player - {player_score}")
-
-print(f"Player Score is {player_score}")
-print(f"Dealer Score is {dealer_score}")
