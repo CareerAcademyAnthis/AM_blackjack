@@ -22,20 +22,29 @@ cards1 = int(input("What is card 1? "))
 cards2 = int(input("What is card 2? "))
 print(dealer_action(cards1, cards2))
 
-dealer_value = int(input("Dealer Enter Number: "))
-player_value = int(input("Player Enter Number: "))
+dealer_value = int(input("Dealer Enter Card Number: "))
+player_value = int(input("Player Enter Card Number: "))
 dealer_score = 0
 player_score = 0
 
-if dealer_value > player_value:
+if player_value >= 22:
     dealer_score += 1
-    print("Dealer Wins this Round")
-elif dealer_value == player_value:
-    dealer_score += 1
-    print("Tie, Dealer Wins Round")
-else:
+    print("Player Bust, Dealer Wins Round")
+elif dealer_value >= 22:
     player_score += 1
-    print("Player Wins")
+    print("Dealer Bust, Player Wins Round")
+elif player_value < dealer_value:
+    dealer_score += 1
+    print("Dealer Wins Round")
+elif dealer_value < player_value:
+    player_score += 1
+    print("Player Wins Round")
+else:
+    dealer_score += 1
+    print("Tie, Dealer Wins")
+
+print(f"Dealer - {dealer_score}")
+print(f"Player - {player_score}")
 
 print(f"Player Score is {player_score}")
 print(f"Dealer Score is {dealer_score}")
